@@ -5,12 +5,12 @@ import angular from 'angular';
 const module = 'factorySavePhotosets';
 
 angular.module(module, [])
-    .factory("factorySavePhotosets", () => {
+    .factory("factorySavePhotosets", function () {
         let photosets = {};
-        let listAlbums = [];
-        let user = JSON.parse(localStorage.getItem("user"));
 
         photosets.give = data => {
+            let listAlbums = [];
+            let user = JSON.parse(localStorage.getItem("user"));
             data.photosets.photoset.forEach((item, i) => {
 
                 let obj = {
@@ -22,6 +22,7 @@ angular.module(module, [])
 
                 listAlbums.push(obj);
             });
+
             user.albums = listAlbums;
             photosets.saveLS(user, "user");
         };

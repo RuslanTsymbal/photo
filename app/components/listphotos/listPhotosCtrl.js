@@ -5,14 +5,17 @@ import factoryListPhotos from './factoryListPhotos.js';
 import factoryUrlPhotos from './factoryUrlPhotos.js';
 import factoryPhoto from './factoryPhoto.js';
 import factoryDataAlbum from '../albums/factoryDataAlbum.js';
+import config from '../../js/cofig';
+
 
 const module = 'listPhotosCtrl';
 
 angular.module(module, [])
-    .controller('listPhotosCtrl', ($scope, $http,  factoryDataAlbum, factoryListPhotos, factoryUrlPhotos, factoryPhoto) => {
+    .controller('listPhotosCtrl', function ($scope, $http,  factoryDataAlbum, factoryListPhotos, factoryUrlPhotos, factoryPhoto) {
         let album = factoryDataAlbum.getDataAlbum();
         let user_id = album.user_id;
         let photoset_id = album.photoset_id;
+        let key = config.flickr_key;
 
         $scope.showPhotos = false;
         $scope.showButton = true;
@@ -20,8 +23,6 @@ angular.module(module, [])
         $scope.urlPhotos = factoryUrlPhotos.getUrlPhotos();
         $scope.title = album.title;
         $scope.quantity = album.photos;
-
-        let key = "f6902bbb3a8416f1fdd08b92fdceda7d";
 
         $scope.listPhotos = () => {
             let readyUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getPhotos&api_key=" + key + "&photoset_id=" + photoset_id + "&user_id=" + user_id + "&format=json&nojsoncallback=1";

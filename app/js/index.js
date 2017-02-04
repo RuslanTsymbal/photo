@@ -3,7 +3,7 @@
 import angular from 'angular';
 
 //modules
-import headerCtrl from '../components/header/header.js';
+import headerCtrl from '../components/header/headerCtrl.js';
 import authorizationCtrl from '../components/authorization/authorizationCtrl.js';
 import listPhotosCtrl from '../components/listphotos/listPhotosCtrl.js';
 import albumsCtrl from '../components/albums/albumsCtrl.js';

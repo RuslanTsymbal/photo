@@ -5,7 +5,7 @@ import angular from 'angular';
 const module = 'factoryDataAlbum';
 
 angular.module(module, [])
-    .factory("factoryDataAlbum", () => {
+    .factory("factoryDataAlbum", function () {
         let album = {};
 
         album.give = (index) => {

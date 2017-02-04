@@ -5,7 +5,7 @@ import angular from 'angular';
 const module = 'factoryUrlPhotos';
 
 angular.module(module, [])
-    .factory("factoryUrlPhotos", () => {
+    .factory("factoryUrlPhotos", function () {
         let urlPhotos = {};
 
         urlPhotos.give = (data) => {

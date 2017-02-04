@@ -2,15 +2,16 @@
 
 import angular from 'angular';
 import factorySaveUser from './factorySaveUser.js';
+import config from '../../js/cofig';
 
 const module = 'authorizationCtrl';
 
 angular.module(module, [])
-    .controller('authorizationCtrl', ($scope, $http, $state, factorySaveUser) => {
+    .controller('authorizationCtrl', function ($scope, $http, $state, factorySaveUser) {
         $scope.form = true;
-        $scope.emailUser = "rtrtrt";
+        $scope.emailUser = "";
 
-        let key = "f6902bbb3a8416f1fdd08b92fdceda7d";
+        let key = config.flickr_key;
 
         $scope.authorizationUser = (emailUser) => {
             let emailUrl = encodeURIComponent(emailUser);

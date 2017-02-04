@@ -1,6 +1,8 @@
 <section id="albums">
-    <div ng-if="showRequest">
-        <a ng-click="requestListAlbums()">List of albums</a>
+    <div class="show-albums" ng-if="showRequest">
+        <button ng-click="requestListAlbums()" type="submit" class="btn">Show list albums
+            <i class="fa fa-picture-o" aria-hidden="true"></i>
+        </button>
     </div>
     <div ng-if="showAlbums">
         <span>Albums :</span>

@@ -5,7 +5,7 @@ import angular from 'angular';
 const module = 'factorySaveUser';
 
 angular.module(module, [])
-    .factory("factorySaveUser", () => {
+    .factory("factorySaveUser", function () {
         let user = {};
 
         user.save = data => {

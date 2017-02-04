@@ -5,11 +5,10 @@ import angular from 'angular';
 const module = 'factoryPhoto';
 
 angular.module(module, [])
-    .factory("factoryPhoto", () => {
+    .factory("factoryPhoto", function () {
         let photo = {};
 
         photo.give = (url, index) => {
-            debugger;
             let user = JSON.parse(localStorage.getItem("user"));
             user.photo = {
                 "url": url,

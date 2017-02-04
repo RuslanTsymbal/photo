@@ -9,10 +9,11 @@ import config from '../../js/cofig';
 const module = 'albumsCtrl';
 
 angular.module(module, [])
-    .controller('albumsCtrl', ($scope, $rootScope, $http, factorySaveUser, factorySavePhotosets, factoryDataAlbum) => {
+    .controller('albumsCtrl', function ($scope, $rootScope, $http, factorySaveUser, factorySavePhotosets, factoryDataAlbum) {
         $scope.showAlbums = false;
         $scope.showRequest = true;
         $scope.showResult = false;
+        $scope.albumsUser = [];
         $scope.albumsUser = factorySavePhotosets.getAlbums();
 
         let key = config.flickr_key;
@@ -28,6 +29,7 @@ angular.module(module, [])
             let readyUrl = "https://api.flickr.com/services/rest/?method=flickr.photosets.getList&api_key=" + key + "&user_id=" + user_id + "&format=json&nojsoncallback=1";
             $http.get(readyUrl)
                 .then((response)=> {
+                    debugger;
                     let data = response.data;
                     factorySavePhotosets.give(data);
                     $scope.albumsUser = factorySavePhotosets.getAlbums();
@@ -35,7 +37,7 @@ angular.module(module, [])
                 });
         };
 
-       let show = () => {
+        let show = () => {
             if ($scope.albumsUser.length == 0) {
                 $scope.showAlbums = true;
                 $scope.showRequest = false;

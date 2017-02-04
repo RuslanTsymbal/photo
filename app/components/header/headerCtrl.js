@@ -6,9 +6,9 @@ const module = 'headerCtrl';
 import factorySaveUser from '../authorization/factorySaveUser.js';
 
 angular.module(module, [])
-    .controller('headerCtrl',($scope, $state, factorySaveUser) => {
+    .controller('headerCtrl', function ($scope, $state, factorySaveUser) {
         $scope.showButtonExit = false;
-        if(localStorage.getItem("user")){
+        if (localStorage.getItem("user")) {
             let dataUser = factorySaveUser.getUser();
             $scope.name = dataUser.name;
             $scope.showButtonExit = true;

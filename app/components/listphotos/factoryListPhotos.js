@@ -5,12 +5,11 @@ import angular from 'angular';
 const module = 'factoryListPhotos';
 
 angular.module(module, [])
-    .factory("factoryListPhotos", () => {
+    .factory("factoryListPhotos", function () {
         let listPhotos = {};
 
-        let user = JSON.parse(localStorage.getItem("user"));
-
         listPhotos.give = (data) => {
+            let user = JSON.parse(localStorage.getItem("user"));
             let arrPhotos = [];
 
             data.photoset.photo.forEach((item, i) => {
