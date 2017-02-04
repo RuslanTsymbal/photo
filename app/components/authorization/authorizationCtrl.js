@@ -27,8 +27,7 @@ angular.module(module, [])
                 factorySaveUser.save(data);
                 $state.go("albums");
             } else {
-                //$scope.emailUser = "";
-                //alert("A user with an email: " + emailUser + " absent.");
+                alert("A user with an email: " + emailUser + " absent.");
             }
         };
     });
