@@ -1,0 +1,31 @@
+<section id="list-photos">
+    <div class="header-list-photo">
+        <button ui-sref="albums" type="submit" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <a ui-sref="albums">Back to albums list</a>
+    </div>
+    <div class="body-list-photo">
+        <div class="info-album">
+            <ul>
+                <li>
+                    <span>Album : {{title}}</span>
+                </li>
+                <li>
+                    <span>Photos : {{quantity}}</span>
+                </li>
+            </ul>
+        </div>
+        <div ng-if="showButton" class="photos">
+            <button ng-click="listPhotos()" type="submit" class="btn">show photos
+                <i class="fa fa-picture-o" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div ng-if="showPhotos" id="list-img">
+            <ul>
+                <li ng-repeat="photo in urlPhotos">
+                    <a ng-click="take(photo, $index)" ui-sref="photo"><img src={{photo}}></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

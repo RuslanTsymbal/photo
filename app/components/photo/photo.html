@@ -1,0 +1,12 @@
+<section id="photo">
+    <div class="top-photo">
+        <button ui-sref="list-photos" type="submit" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <a ui-sref="list-photos">Back to photos list</a>
+    </div>
+    <div class="one-photo">
+        <span>Photos from album - {{photo.album}}</span>
+        <img src={{photo.url}}>
+        <span>Description : {{photo.title}}</span>
+    </div>
+</section>

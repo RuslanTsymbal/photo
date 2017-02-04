@@ -1,0 +1,11 @@
+<section id="authorization" class="form-app">
+    <div ng-if="form">
+        <form ng-submit="authorizationUser(emailUser)" class="form-search">
+            <p>Enter your email for the authorization photohosting <a href="https://www.flickr.com">"Flickr"</a></p>
+            <input type="email" autofocus ng-model="emailUser" class="input-medium search-query"
+                   placeholder="Your email...">
+            <button ng-disabled="!emailUser" type="submit" class="btn">sign in
+            </button>
+        </form>
+    </div>
+</section>
