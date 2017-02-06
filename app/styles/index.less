@@ -1,7 +1,5 @@
 @import "../../node_modules/bootstrap-less/bootstrap/bootstrap.less";
-
 /*fonts*/
-
 @import "../font/segoe_ui/stylesheet.css";
 @import "../font/adventure/stylesheet.css";
 
@@ -9,7 +7,7 @@
 @color-white: #fff;
 @color-black: #000;
 @color-blue: #0000cc;
-
+@color-background: #00b3ff;
 
 html {
   font-size: 62.5%;
@@ -21,9 +19,8 @@ body {
   line-height: 2rem;
 }
 
-#container{
-  background-image: url(../img/bg.jpg);
-  background-size: cover;
+#container {
+  background-color: @color-background;
   background-position: 50% 100%;
   min-height: 687px;
 
@@ -37,13 +34,14 @@ body {
   }
 }
 
-.btn, .btn:focus{
+.btn, .btn:focus {
   width: 80px;
   color: @color-white;
   background-color: @color-blue;
   text-transform: uppercase;
   font-weight: 700;
 }
+
 .btn:hover {
   color: @color-blue;
   background-color: @color-white;
@@ -60,14 +58,20 @@ li {
   background-color: darkslategrey;
   font-family: "Adventure";
 
-  span{
+  span {
     font-weight: 700;
     color: @color-white;
   }
 }
 
+
+/*import file less*/
+@import "./angular-tooltips.less";
 @import "../components/header/header.less";
 @import "../components/authorization/authorization.less";
 @import "../components/albums/albums.less";
 @import "../components/listphotos/listPhotos.less";
 @import "../components/photo/photo.less";
+
+
+

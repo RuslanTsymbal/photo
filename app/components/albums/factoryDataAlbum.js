@@ -10,8 +10,12 @@ angular.module(module, [])
 
         album.give = (index) => {
             let user = JSON.parse(localStorage.getItem("user"));
-            let data = user.albums[index];
-            user.album = data;
+            album.save(user, index)
+        };
+
+        album.save = (user, index) => {
+            let albumUser = user.albums[index];
+            user.album = albumUser;
             album.saveLS(user, "user")
         };
 

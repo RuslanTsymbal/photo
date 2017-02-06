@@ -3,12 +3,14 @@
 import angular from 'angular';
 
 //modules
+
+//Controllers
 import headerCtrl from '../components/header/headerCtrl.js';
 import authorizationCtrl from '../components/authorization/authorizationCtrl.js';
 import listPhotosCtrl from '../components/listphotos/listPhotosCtrl.js';
 import albumsCtrl from '../components/albums/albumsCtrl.js';
 import photoCtrl from '../components/photo/photoCtrl.js';
-
+//factory
 import factorySaveUser from '../components/authorization/factorySaveUser.js';
 import factorySavePhotosets from '../components/albums/factorySavePhotosets.js';
 import factoryDataAlbum from '../components/albums/factoryDataAlbum.js';
@@ -18,11 +20,13 @@ import factoryPhoto from '../components/listphotos/factoryPhoto.js';
 
 
 import angularUiRouter from 'angular-ui-router';
+import tooltips from 'angular-tooltips';
 
 const modulename = 'photoApp';
 
 angular.module(modulename, [
         angularUiRouter,
+        tooltips,
         headerCtrl,
         authorizationCtrl,
         factorySaveUser,

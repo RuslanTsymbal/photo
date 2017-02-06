@@ -8,6 +8,7 @@ var gulp = require("gulp"),
     autoprefixer = require('gulp-autoprefixer');
     cssnano = require('gulp-cssnano');
 
+
 gulp.task("default", ["html", "componentsHtml", "style", "script", "img", "font", "startServer"]);
 
 gulp.task("html", function () {

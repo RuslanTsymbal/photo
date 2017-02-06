@@ -8,6 +8,7 @@ import factorySaveUser from '../authorization/factorySaveUser.js';
 angular.module(module, [])
     .controller('headerCtrl', function ($scope, $state, factorySaveUser) {
         $scope.showButtonExit = false;
+
         if (localStorage.getItem("user")) {
             let dataUser = factorySaveUser.getUser();
             $scope.name = dataUser.name;
@@ -17,6 +18,7 @@ angular.module(module, [])
         $scope.exit = () => {
             localStorage.clear();
             $state.go("index");
+            $scope.showButtonExit = false;
         }
     });
 

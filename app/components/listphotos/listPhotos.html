@@ -22,8 +22,10 @@
         </div>
         <div ng-if="showPhotos" id="list-img">
             <ul>
-                <li ng-repeat="photo in urlPhotos">
-                    <a ng-click="take(photo, $index)" ui-sref="photo"><img src={{photo}}></a>
+                <li ng-repeat="photo in urlPhotos" tooltip-side="right" tooltips tooltip-template={{photo.description}}>
+                    <a ng-click="choosePhoto(photo.url, title, photo.description)" ui-sref="photo">
+                        <img src={{photo.url}} alt="photo">
+                    </a>
                 </li>
             </ul>
         </div>

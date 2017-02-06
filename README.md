@@ -12,8 +12,8 @@ For the test use email baumalight@gmail.com
 
 git clone  https://github.com/RuslanTsymbal/photo.git
 
-npm install
+$ npm install
 
-gulp
+$ gulp
 
 Your app should now be running on localhost:9001.

@@ -7,7 +7,7 @@ import config from '../../js/cofig';
 const module = 'authorizationCtrl';
 
 angular.module(module, [])
-    .controller('authorizationCtrl', function ($scope, $http, $state, factorySaveUser) {
+    .controller('authorizationCtrl', function ($scope, $state, factorySaveUser) {
         $scope.form = true;
         $scope.emailUser = "";
 
@@ -15,20 +15,22 @@ angular.module(module, [])
 
         $scope.authorizationUser = (emailUser) => {
             let emailUrl = encodeURIComponent(emailUser);
-            let readyUrl = "https://api.flickr.com/services/rest/?method=flickr.people.findByEmail&api_key=" + key + "&find_email=" + emailUrl + "&format=json&nojsoncallback=1";
-            $http.get(readyUrl)
-                .then((response)=> {
-                    let data = response.data;
-                    checkStatus(data, emailUser);
+
+            factorySaveUser.give(key, emailUrl)
+                .then((response) => {
+                    if (response.stat == "ok") {
+                        factorySaveUser.save(response);
+                    }
+                    let dataUser = factorySaveUser.getUser();
+                    show(dataUser);
                 });
         };
 
-        let checkStatus = (data, emailUser) => {
-            if (data.stat == "ok") {
-                factorySaveUser.save(data);
+        let show = (dataUser) => {
+            if (dataUser) {
                 $state.go("albums");
-            } else {
-                alert("A user with an email: " + emailUser + " absent.");
+            } else if (dataUser == null) {
+                alert("A user with this email is not available.");
             }
         };
     });

@@ -8,12 +8,16 @@ angular.module(module, [])
     .factory("factoryPhoto", function () {
         let photo = {};
 
-        photo.give = (url, index) => {
+        photo.give = (url, title, description) => {
             let user = JSON.parse(localStorage.getItem("user"));
+            photo.save(user, url, title, description);
+        };
+
+        photo.save = (user, url, title, description)=> {
             user.photo = {
                 "url": url,
-                "album": user.album.title,
-                "title": user.photos[index].title
+                "album_tetle": title,
+                "description": description
             };
             photo.saveLS(user, "user");
         };
