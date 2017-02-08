@@ -6,6 +6,7 @@ const module = 'factoryListPhotos';
 
 angular.module(module, [])
     .factory("factoryListPhotos", function ($http) {
+
         let listPhotos = {};
 
         listPhotos.give = (key, user_id, photoset_id) => {

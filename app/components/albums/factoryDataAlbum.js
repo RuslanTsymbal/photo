@@ -6,6 +6,7 @@ const module = 'factoryDataAlbum';
 
 angular.module(module, [])
     .factory("factoryDataAlbum", function () {
+
         let album = {};
 
         album.give = (index) => {

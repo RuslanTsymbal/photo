@@ -1,0 +1,99 @@
+@import "../../node_modules/bootstrap-less/bootstrap/bootstrap.less";
+/*fonts*/
+@import "../../../assets/font/segoe_ui/stylesheet.css";
+@import "../../../assets/font/adventure/stylesheet.css";
+@import "../../../assets/font/aalterna/stylesheet.css";
+
+/*color*/
+@color-white: #fff;
+@color-black: #000;
+@color-blue: #0000cc;
+@color-background: #00b3ff;
+@color-brown: #745F5F;
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Segoe UI";
+  padding-top: 0;
+  line-height: 2rem;
+}
+
+.gradient {
+  padding: 22px 0 22px 0;
+  background: #f3e2c7; /* Old browsers */
+  background: -moz-linear-gradient(top, #f3e2c7 0%, #b68d4c 0%, #c19e67 0%, #e9d4b3 18%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f3e2c7 0%, #b68d4c 0%, #c19e67 0%, #e9d4b3 18%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f3e2c7 0%, #b68d4c 0%, #c19e67 0%, #e9d4b3 18%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f3e2c7', endColorstr='#e9d4b3', GradientType=0); /* IE6-9 */
+}
+
+#container {
+  background-position: 50% 100%;
+  min-height: 687px;
+
+  .container-fluid {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .wrapper {
+    min-height: 687px;
+  }
+  .wrapper-color {
+    background-color: @color-white;
+    border-radius: 15px;
+    padding-top: 35px;
+  }
+}
+
+.btn, .btn:focus {
+  width: 80px;
+  background-color: @color-brown;
+  color: @color-white;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: 2px solid @color-brown;
+}
+
+.btn:hover {
+  color: @color-brown;
+  background-color: @color-white;
+  border: 2px solid @color-brown;
+  transition: 0.5s;
+}
+
+li {
+  list-style-type: none;
+}
+
+#footer {
+  text-align: center;
+  padding: 10px 0 10px 0;
+  background-color: @color-brown;
+  font-family: "Adventure";
+
+  span {
+    font-weight: 700;
+    color: @color-white;
+    padding-right: 7px;
+  }
+
+  i {
+    font-weight: 700;
+    color: @color-white;
+  }
+}
+
+/*import file less*/
+@import "./angular-tooltips.less";
+@import "./header.less";
+@import "./authorization.less";
+@import "./albums.less";
+@import "./listPhotos.less";
+@import "./photo.less";
+
+
+

@@ -6,6 +6,7 @@ const module = 'factoryUrlPhotos';
 
 angular.module(module, [])
     .factory("factoryUrlPhotos", function () {
+
         let urlPhotos = {};
 
         urlPhotos.give = (data) => {

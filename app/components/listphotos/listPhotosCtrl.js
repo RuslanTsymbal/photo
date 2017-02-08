@@ -6,7 +6,7 @@ import factoryListPhotos from './factoryListPhotos.js';
 import factoryUrlPhotos from './factoryUrlPhotos.js';
 import factoryPhoto from './factoryPhoto.js';
 import factoryDataAlbum from '../albums/factoryDataAlbum.js';
-import config from '../../js/cofig';
+import config from '../../../assets/js/cofig';
 
 const module = 'listPhotosCtrl';
 

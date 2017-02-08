@@ -2,13 +2,12 @@
 
 import angular from 'angular';
 import factorySaveUser from './factorySaveUser.js';
-import config from '../../js/cofig';
+import config from '../../../assets/js/cofig';
 
 const module = 'authorizationCtrl';
 
 angular.module(module, [])
     .controller('authorizationCtrl', function ($scope, $state, factorySaveUser) {
-        $scope.form = true;
         $scope.emailUser = "";
 
         let key = config.flickr_key;

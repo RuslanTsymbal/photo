@@ -6,6 +6,7 @@ const module = 'factorySaveUser';
 
 angular.module(module, [])
     .factory("factorySaveUser", function ($http) {
+
         let user = {};
 
         user.give = (key, emailUrl) => {

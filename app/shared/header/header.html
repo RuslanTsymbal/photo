@@ -1,0 +1,11 @@
+<header id="header">
+    <div class="wrapper container-fluid">
+        <div class="title">
+            <h1>photo app</h1>
+        </div>
+        <div ng-if="name" class="name-user">
+            <span>Name user : {{name}}</span>
+            <button ng-click="exit()" ng-show="showButtonExit" type="submit" class="btn">Exit</button>
+        </div>
+    </div><!--#wrapper-->
+</header>

@@ -9,20 +9,15 @@ var gulp = require("gulp"),
     cssnano = require('gulp-cssnano');
 
 
-gulp.task("default", ["html", "componentsHtml", "style", "script", "img", "font", "startServer"]);
-
-gulp.task("html", function () {
-    return gulp.src("./app/index.html")
-        .pipe(gulp.dest("./dist"))
-});
+gulp.task("default", ["componentsHtml", "style", "script","img", "startServer"]);
 
 gulp.task("componentsHtml", function () {
-    return gulp.src("./app/components/*/*.html")
-        .pipe(gulp.dest("./dist/components"))
+    return gulp.src("app/*/*/*.html")
+        .pipe(gulp.dest("./dist/"))
 });
 
 gulp.task('style', function () {
-    return gulp.src('app/styles/index.less')
+    return gulp.src('assets/css/index.less')
         .pipe(sourcemaps.init())
         .pipe(less())
         .pipe(autoprefixer({
@@ -31,34 +26,29 @@ gulp.task('style', function () {
             }))
         .pipe(cssnano())
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('dist/styles'))
+        .pipe(gulp.dest('dist/assets/css'))
 });
 
 gulp.task("script", function () {
     return browserify({
-        entries: ["./app/js/index.js"]
+        entries: ["app/module.js"]
     })
         .transform(babelify.configure({
             presets: ["es2015"]
         }))
         .bundle()
         .pipe(source("bundle.js"))
-        .pipe(gulp.dest("./dist"));
+        .pipe(gulp.dest("dist"));
 });
 
 gulp.task('img', function () {
-    return gulp.src('app/img/*.*')
-        .pipe(gulp.dest('dist/img/'));
-});
-
-gulp.task('font', function () {
-    return gulp.src('app/font/**/')
-        .pipe(gulp.dest('dist/font/'));
+    return gulp.src('assets/img/*.*')
+        .pipe(gulp.dest('./dist/assets/img'));
 });
 
 gulp.task("startServer", function () {
     connect.server({
-        root: "./dist",
+        root: "",
         livereload: true,
         port: 9001
     });
@@ -66,10 +56,11 @@ gulp.task("startServer", function () {
 
 gulp.task('watch', function () {
     gulp.watch('startServer');
-    gulp.watch(['app/js/*.js'], ['script']);
+    gulp.watch(['app/*.js'], ['script']);
+    gulp.watch(['assets/js/*.js'], ['script']);
     gulp.watch(['app/components/*/*.js'], ['script']);
-    gulp.watch('app/index.html', ['html']);
+    gulp.watch(['app/shared/*/*.js'], ['script']);
     gulp.watch('app/components/*/*.html', ['componentsHtml']);
-    gulp.watch('app/styles/*.less', ['style']);
-    gulp.watch('app/components/*/*.less', ['style']);
+    gulp.watch('app/shared/*/*.html', ['componentsHtml']);
+    gulp.watch('assets/css/*.less', ['style']);
   });

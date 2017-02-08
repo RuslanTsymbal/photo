@@ -3,7 +3,7 @@
 import angular from 'angular';
 
 const module = 'headerCtrl';
-import factorySaveUser from '../authorization/factorySaveUser.js';
+import factorySaveUser from '../../components/authorization/factorySaveUser.js';
 
 angular.module(module, [])
     .controller('headerCtrl', function ($scope, $state, factorySaveUser) {

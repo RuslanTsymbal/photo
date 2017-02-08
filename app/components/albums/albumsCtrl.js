@@ -4,7 +4,7 @@ import angular from 'angular';
 import factorySaveUser from '../authorization/factorySaveUser.js';
 import factorySavePhotosets from './factorySavePhotosets.js';
 import factoryDataAlbum from './factoryDataAlbum.js';
-import config from '../../js/cofig';
+import config from '../../../assets/js/cofig';
 
 const module = 'albumsCtrl';
 
