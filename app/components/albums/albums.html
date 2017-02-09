@@ -1,19 +1,30 @@
 <section id="albums">
-    <div class="show-albums" ng-if="showRequest">
+    <div class="show-albums col-lg-6 col-md-6 col-sm-6" ng-if="showRequest">
         <button ng-click="requestListAlbums()" type="submit" class="btn">Show list albums
             <i class="fa fa-picture-o" aria-hidden="true"></i>
         </button>
     </div>
-    <div ng-if="showAlbums">
+    <div class="list-albums col-lg-6 col-md-6 col-sm-6" ng-if="showAlbums">
         <span>Albums :</span>
-        <li ng-repeat="album in albumsUser">
-            <a ui-sref="list-photos" ng-click="getIndexAlbum($index); $event.stopPropagation()">{{$index + 1}}.
-                {{album.title}}</a>
-            <span class="quantity">Photos: ( {{album.photos}} )</span>
-            <button ng-click="getIndexAlbum($index);  $event.stopPropagation()" ui-sref="list-photos" type="submit"
-                    class="btn"><i class="fa fa-check" aria-hidden="true"></i>
-            </button>
-        </li>
+        <ul>
+            <li ng-repeat="album in albumsUser">
+                <div class="title-album">
+                    <a class="transition-scale" ui-sref="list-photos"
+                       ng-click="getIndexAlbum($index); $event.stopPropagation()">{{$index + 1}}.
+                        Album : <span class="uppercase">{{album.title}}</span>
+                    </a>
+                <span class="quantity">
+                    photos: ( {{album.photos}} )
+                </span>
+                </div>
+                <button ng-click="getIndexAlbum($index);  $event.stopPropagation()" ui-sref="list-photos" type="submit"
+                        class="btn"><i class="fa fa-check" aria-hidden="true"></i>
+                </button>
+            </li>
+        </ul>
         <p ng-if="showResult">You have not albums.</p>
+    </div>
+    <div class="animated jello img-album col-lg-6 col-md-6 col-sm-6">
+        <img src="../../assets/img/album.gif" alt="photo-album">
     </div>
 </section>

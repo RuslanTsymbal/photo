@@ -27,10 +27,10 @@ angular.module(module, [])
 
         $scope.requestListAlbums = () => {
             factorySavePhotosets.give(key, user_id)
-            .then((response) => {
-                factorySavePhotosets.save(response);
-                show();
-            });
+                .then((response) => {
+                    factorySavePhotosets.save(response);
+                    show();
+                });
         };
 
         let show = () => {

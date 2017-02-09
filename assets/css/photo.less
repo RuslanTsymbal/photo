@@ -1,4 +1,5 @@
 #photo {
+  padding-left: 27px;
 
   .btn {
     width: 26px;
@@ -9,31 +10,44 @@
 
   .top-photo {
     overflow: hidden;
+
     a {
-      color: @color-blue;
+      color: @color-brown;
       font-weight: 500;
     }
 
     a:hover {
       transition: 0.5s;
-      color: @color-white;
+      color: @color-blue;
       text-decoration: none;
     }
   }
-  .one-photo {
 
+  .one-photo {
     padding-top: 18px;
 
-    span {
-      display: block;
-      padding-bottom: 10px;
-      color: @color-white;
-      font-weight: 600;
+    ul {
+      padding: 10px 0 8px 0;
+      li {
+        margin-bottom: 10px;
+        span {
+          padding-bottom: 10px;
+          color: @color-brown;
+          font-weight: 600;
+          font-family: "Allterna";
+          font-size: 2rem;
+        }
+      }
     }
 
-    img {
-      overflow: hidden;
-      margin-bottom: 8px;
+    .photo-img {
+      padding-top: 18px;
+      img {
+        overflow: hidden;
+        margin: 0 auto;
+        width: 50%;
+        display: block;
+      }
     }
   }
 }

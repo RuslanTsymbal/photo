@@ -1,43 +1,46 @@
 #list-photos {
-
-  .btn {
-    margin-left: 13px;
-    height: 24px;
-    width: 26px;
-    padding: 0;
-    float: left;
-    margin-right: 8px;
-  }
+  overflow: hidden;
 
   a {
-    color: @color-blue;
+    color: @color-brown;
     font-weight: 500;
   }
   a:hover {
     transition: 0.5s;
-    color: @color-white;
+    color: @color-blue;
     text-decoration: none;
-  }
-
-  .header-list-photo {
-    overflow: hidden;
-    margin-bottom: 20px;
   }
 
   .info-album {
     overflow: hidden;
+    ul {
+      padding-left: 12px;
+      li {
+        color: @color-brown;
+        font-weight: 600;
+        display: block;
+        text-transform: capitalize;
+        margin-bottom: 10px;
 
-    li {
-      color: @color-white;
-      font-weight: 600;
-      display: block;
+        span {
+          font-family: "Allterna";
+          font-size: 2rem;
+          margin-bottom: 10px;
+        }
+      }
     }
+
   }
+
   .photos {
+    overflow: hidden;
+    padding-top: 16px;
 
     .btn {
       width: 160px;
       height: 28px;
+      padding-top: 3px;
+      margin-left: 10px;
     }
 
     i {
@@ -47,7 +50,10 @@
 }
 
 #list-img {
+  padding-top: 20px;
+
   ul {
+    padding-left: 10px;
     width: 190px;
 
     li {
@@ -77,5 +83,25 @@
       cursor: pointer;
       overflow: hidden;
     }
+  }
+}
+
+.list-photo-img {
+  img {
+    width: 80%;
+  }
+}
+
+.header-btn {
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  .btn {
+    margin-left: 13px;
+    height: 24px;
+    width: 26px;
+    padding: 0;
+    float: left;
+    margin-right: 8px;
   }
 }

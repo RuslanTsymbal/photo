@@ -5,8 +5,16 @@
         <a ui-sref="list-photos">Back to photos list</a>
     </div>
     <div class="one-photo">
-        <span>Photo from album - {{photo.album_tetle}}</span>
-        <img src={{photo.url}}>
-        <span>Description : {{photo.description}}</span>
+        <ul>
+            <li>
+                <span>Photo from album  <span class="uppercase"> {{photo.album_tetle}}</span></span>
+            </li>
+            <li>
+                <span>Description : {{photo.description}}</span>
+            </li>
+        </ul>
+        <div class="animated bounceInUp photo-img">
+            <img src={{photo.url}}>
+        </div>
     </div>
 </section>

@@ -1,4 +1,6 @@
 @import "../../node_modules/bootstrap-less/bootstrap/bootstrap.less";
+@import (less) "../../node_modules/animate.css/animate.min.css";
+@import (less) "../../node_modules/angular-tooltips/dist/angular-tooltips.min.css";
 /*fonts*/
 @import "../../../assets/font/segoe_ui/stylesheet.css";
 @import "../../../assets/font/adventure/stylesheet.css";
@@ -69,6 +71,24 @@ li {
   list-style-type: none;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
+.header-btn {
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  .btn {
+    margin-left: 13px;
+    height: 24px;
+    width: 26px;
+    padding: 0;
+    float: left;
+    margin-right: 8px;
+  }
+}
+
 #footer {
   text-align: center;
   padding: 10px 0 10px 0;
@@ -80,15 +100,23 @@ li {
     color: @color-white;
     padding-right: 7px;
   }
+}
 
-  i {
-    font-weight: 700;
-    color: @color-white;
-  }
+.transition-scale {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+  cursor: pointer;
+  transition: 1s linear;
+}
+
+.transition-scale:hover {
+  -webkit-transform: scale(2);
+  transform: scale(1.1);
 }
 
 /*import file less*/
-@import "./angular-tooltips.less";
 @import "./header.less";
 @import "./authorization.less";
 @import "./albums.less";

@@ -1,14 +1,14 @@
 <section id="list-photos">
-    <div class="header-list-photo">
-        <button ui-sref="albums" type="submit" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
-        </button>
-        <a ui-sref="albums">Back to albums list</a>
-    </div>
-    <div class="body-list-photo">
+    <div class="body-list-photo col-lg-6 col-md-6 col-sm-6">
+        <div class="header-btn">
+            <button ui-sref="albums" type="submit" class="btn"><i class="fa fa-arrow-left" aria-hidden="true"></i>
+            </button>
+            <a ui-sref="albums">Back to albums list</a>
+        </div>
         <div class="info-album">
             <ul>
                 <li>
-                    <span>Album : {{title}}</span>
+                    <span>Album : <span class="uppercase">{{title}}</span></span>
                 </li>
                 <li>
                     <span>Photos : {{quantity}}</span>
@@ -29,5 +29,8 @@
                 </li>
             </ul>
         </div>
+    </div>
+    <div class="animated jello list-photo-img col-lg-6 col-md-6 col-sm-6">
+        <img src="../../assets/img/photos.jpg" alt="photos">
     </div>
 </section>
